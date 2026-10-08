@@ -1,0 +1,22 @@
+{
+  "name": "cleanomatics-task-management-workspace",
+  "version": "1.0.0",
+  "description": "Full-Stack Task Management System with Express REST API and React UI",
+  "private": true,
+  "scripts": {
+    "install:all": "cd backend && npm install && cd ../frontend && npm install",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build:frontend": "cd frontend && npm run build",
+    "test:api": "cd backend && node test-api.js"
+  },
+  "keywords": [
+    "task-management",
+    "react",
+    "express",
+    "rest-api",
+    "cleanomatics"
+  ],
+  "author": "Cleanomatics Full Stack Engineering",
+  "license": "ISC"
+}
