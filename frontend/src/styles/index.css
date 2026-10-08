@@ -3,9 +3,9 @@
    ========================================================================== */
 
 :root {
-  /* Primary Font Families */
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-display: 'Outfit', 'Inter', sans-serif;
+  /* Primary Professional Font Families */
+  --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* --- LIGHT THEME (DEFAULT) --- */
   --bg-app: #F8FAFC;
@@ -150,9 +150,12 @@ body {
   background-color: var(--bg-app);
   color: var(--text-main);
   min-height: 100vh;
-  line-height: 1.5;
+  line-height: 1.55;
+  letter-spacing: -0.011em;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
@@ -201,8 +204,10 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   font-weight: 700;
   color: var(--text-main);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.028em;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
 }
+
 
 p {
   color: var(--text-muted);
