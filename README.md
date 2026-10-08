@@ -280,7 +280,69 @@ All 7 core CRUD workflows, validation scenarios, and statistical calculations ar
 ## 🎨 Design Philosophy & Evaluation Highlights
 
 - **Light Theme Excellence**: Designed from the ground up for high readability, modern micro-interactions, clean card elevations, and color-coded status badges.
-- **Atomic Components**: Reusable UI components with clear props and responsibilities.
+- **Atomic Components**: Reusable UI components with clean props and responsibilities.
 - **Dedicated Service Layer**: Clean separation of frontend network concerns in `api.js`.
 - **Zero Database / Realtime DB Dependency**: Adheres strictly to the in-memory backend specification.
 - **Complete Bonus Features**: Debounced search, multi-filter combinations, custom sorting, pagination with page-size selector, dark mode toggle, and Swagger documentation.
+
+---
+
+## 🌐 Production Deployment Guide
+
+This project is pre-configured for both **Unified Single-Service Deployment** and **Split Deployment (Vercel + Render)**.
+
+### Option 1: Unified Single-Service Deployment on Render (Recommended ⭐)
+Deploy the **entire application (Frontend + Backend + Swagger API)** on a single free Render Web Service.
+
+1. **Push your repository to GitHub**:
+   ```bash
+   git remote add origin https://github.com/<your-username>/cleanomatics-task-management.git
+   git branch -M main
+   git push -u origin main
+   ```
+2. **Go to [Render.com](https://render.com)** and sign in with GitHub.
+3. Click **New +** ➔ **Web Service**.
+4. Select your GitHub repository.
+5. Set the following settings:
+   - **Name**: `cleanomatics-task-manager`
+   - **Environment**: `Node`
+   - **Region**: Any (e.g. Frankfurt / Oregon / Singapore)
+   - **Branch**: `main`
+   - **Build Command**: `npm run build`
+   - **Start Command**: `npm start`
+   - **Plan**: `Free`
+6. Click **Deploy Web Service**.
+7. Once deployed, Render will provide a live URL (e.g. `https://cleanomatics-task-manager.onrender.com`).
+   - Your frontend loads directly on that URL!
+   - Your REST API is available at `https://cleanomatics-task-manager.onrender.com/api`
+   - Your Swagger UI is available at `https://cleanomatics-task-manager.onrender.com/api-docs`
+
+---
+
+### Option 2: Split Deployment (Frontend on Vercel + Backend on Render)
+
+#### A. Deploy the Backend on Render
+1. In Render, click **New +** ➔ **Web Service**.
+2. Select your repository.
+3. Configure:
+   - **Root Directory**: `backend`
+   - **Build Command**: `npm install`
+   - **Start Command**: `npm start`
+   - **Environment Variables**:
+     - `NODE_ENV`: `production`
+     - `PORT`: `5000`
+4. Copy your backend's public URL (e.g. `https://cleanomatics-api.onrender.com`).
+
+#### B. Deploy the Frontend on Vercel
+1. Go to [Vercel.com](https://vercel.com) and click **Add New...** ➔ **Project**.
+2. Import your GitHub repository.
+3. Configure Project:
+   - **Framework Preset**: `Vite`
+   - **Root Directory**: `frontend`
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `dist`
+4. Add **Environment Variable**:
+   - Key: `VITE_API_BASE_URL`
+   - Value: `https://cleanomatics-api.onrender.com/api` *(Your Render backend URL + `/api`)*
+5. Click **Deploy**. Vercel will provide your instant production frontend URL!
+
