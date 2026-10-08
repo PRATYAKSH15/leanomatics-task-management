@@ -4,6 +4,21 @@ A modern, high-performance full-stack Task Management application built with a *
 
 ---
 
+## 🚀 Live Production Links
+
+The application is deployed and live in production:
+
+| Service | Live Link | Description |
+| :--- | :--- | :--- |
+| 🌐 **Live Web Application** | **[https://cleanomatics-task-manager.onrender.com](https://cleanomatics-task-manager.onrender.com)** | Full-stack interactive task manager in Light Theme |
+| 📖 **Interactive Swagger UI** | **[https://cleanomatics-task-manager.onrender.com/api-docs](https://cleanomatics-task-manager.onrender.com/api-docs)** | OpenAPI 3.0 interactive API documentation |
+| 📡 **REST API Base URL** | **[https://cleanomatics-task-manager.onrender.com/api/tasks](https://cleanomatics-task-manager.onrender.com/api/tasks)** | Live REST endpoints |
+| 🩺 **System Health Endpoint** | **[https://cleanomatics-task-manager.onrender.com/api/health](https://cleanomatics-task-manager.onrender.com/api/health)** | Live server health & uptime status |
+| 🐙 **GitHub Repository** | **[https://github.com/PRATYAKSH15/leanomatics-task-management](https://github.com/PRATYAKSH15/leanomatics-task-management)** | Full source code repository |
+
+---
+
+
 ## 🌟 Key Features
 
 ### 🖥️ Frontend (React 19 + Vite)
@@ -291,31 +306,20 @@ All 7 core CRUD workflows, validation scenarios, and statistical calculations ar
 
 This project is pre-configured for both **Unified Single-Service Deployment** and **Split Deployment (Vercel + Render)**.
 
-### Option 1: Unified Single-Service Deployment on Render (Recommended ⭐)
-Deploy the **entire application (Frontend + Backend + Swagger API)** on a single free Render Web Service.
+### Option 1: Unified Single-Service Deployment on Render (Active & Live ⭐)
+The application is currently deployed using Render's unified full-stack architecture:
 
-1. **Push your repository to GitHub**:
-   ```bash
-   git remote add origin https://github.com/<your-username>/cleanomatics-task-management.git
-   git branch -M main
-   git push -u origin main
-   ```
-2. **Go to [Render.com](https://render.com)** and sign in with GitHub.
-3. Click **New +** ➔ **Web Service**.
-4. Select your GitHub repository.
-5. Set the following settings:
-   - **Name**: `cleanomatics-task-manager`
-   - **Environment**: `Node`
-   - **Region**: Any (e.g. Frankfurt / Oregon / Singapore)
-   - **Branch**: `main`
-   - **Build Command**: `npm run build`
-   - **Start Command**: `npm start`
-   - **Plan**: `Free`
-6. Click **Deploy Web Service**.
-7. Once deployed, Render will provide a live URL (e.g. `https://cleanomatics-task-manager.onrender.com`).
-   - Your frontend loads directly on that URL!
-   - Your REST API is available at `https://cleanomatics-task-manager.onrender.com/api`
-   - Your Swagger UI is available at `https://cleanomatics-task-manager.onrender.com/api-docs`
+1. **Repository**: `https://github.com/PRATYAKSH15/leanomatics-task-management`
+2. **Build & Start Pipeline**:
+   - **Build Command**: `npm run build` *(installs backend & frontend dependencies, bundles Vite production assets)*
+   - **Start Command**: `npm start` *(starts Express server which serves the API and static frontend)*
+   - **Environment Variable**: `NODE_ENV=production`
+3. **Live Endpoints**:
+   - **Application UI**: [https://cleanomatics-task-manager.onrender.com](https://cleanomatics-task-manager.onrender.com)
+   - **API Base**: [https://cleanomatics-task-manager.onrender.com/api/tasks](https://cleanomatics-task-manager.onrender.com/api/tasks)
+   - **Swagger Docs**: [https://cleanomatics-task-manager.onrender.com/api-docs](https://cleanomatics-task-manager.onrender.com/api-docs)
+   - **Health Check**: [https://cleanomatics-task-manager.onrender.com/api/health](https://cleanomatics-task-manager.onrender.com/api/health)
+
 
 ---
 
